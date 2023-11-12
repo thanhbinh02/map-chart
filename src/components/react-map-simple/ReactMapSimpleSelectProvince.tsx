@@ -16,8 +16,8 @@ const ReactMapSimpleSelectProvince = () => {
   const VIET_NAM_DATA = vietnam as VietNamType;
   const [item, setItem] = useState();
 
-  const colorScale = scaleQuantile()
-    .domain(VIET_NAM_DATA.features.map((d) => d.properties.gid))
+  const colorScale = scaleQuantile<string>()
+    .domain(VIET_NAM_DATA.features.map((d) => Number(d.properties.gid)))
     .range([
       "#ffedea",
       "#ffcec5",
